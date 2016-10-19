@@ -1,5 +1,13 @@
 .gradle
 
+#binaries
+.bin
+
+# auto-generated docs
+.xml
+.html
+
+#java binaries
 .class
 
 # Mobile Tools for Java (J2ME)
