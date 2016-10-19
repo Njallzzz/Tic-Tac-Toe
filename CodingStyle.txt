@@ -5,7 +5,7 @@ All functions and variable are declared in camel-casing (ex. baseFunction)
 All classes start in pascal-casing (ex. BaseClass)
 
 All comments should be constructed as JavaDoc annotations:
-/**
+/*
 *
 * All comments should be here
 *
