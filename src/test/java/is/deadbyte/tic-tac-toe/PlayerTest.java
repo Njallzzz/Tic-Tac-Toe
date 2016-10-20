@@ -9,4 +9,11 @@ public class PlayerTest {
         assertTrue("somePlayerMethod should return 'true'", classUnderTest.somePlayerMethod());
     }
 	
+	@Test
+	public void testMove() {
+		Player player1 = new Player();
+		player1.move();
+		
+		assertTrue("hasTurn should return 'false'", player1.hasTurn());
+	}
 }
