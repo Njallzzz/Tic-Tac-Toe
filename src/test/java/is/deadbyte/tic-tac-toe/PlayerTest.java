@@ -16,4 +16,12 @@ public class PlayerTest {
 		
 		assertFalse("hasTurn should return 'false'", player1.hasTurn());
 	}
+	
+	@Test
+	public void testName(){
+		Player player = new Player();
+		player.giveName("Gulli");
+		
+		assertEqual("Gulli", player.getName());
+	}
 }
