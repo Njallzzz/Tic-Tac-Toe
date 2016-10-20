@@ -22,6 +22,14 @@ public class Player {
 		return name;
 	}
 	
+	public void setSymbol(char s) {
+		symbol = s;
+	}
+	
+	public char getSymbol() {
+		return symbol;
+	}
+	
 	public void move() {
 		hasTurn = false;
 	}
