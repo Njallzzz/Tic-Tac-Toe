@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d "/home/tester/Tic-Tac-Toe/bin" ]; then
+	exit(0);
+fi
+
 cd /home/tester/Tic-Tac-Toe
 
 cp -R /home/tester/Tic-Tac-Toe/build/docs/javadoc/* /results
