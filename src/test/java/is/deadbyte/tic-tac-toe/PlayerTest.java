@@ -24,4 +24,12 @@ public class PlayerTest {
 		
 		assertEquals("Gulli", player.getName());
 	}
+	
+	@Test
+	public void testSymbol(){
+		Player player = new Player();
+		player.setSymbol("x");
+		
+		assertEquals("x", player.getSymbol());
+	}
 }
