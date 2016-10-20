@@ -17,7 +17,6 @@ task createJavadoc(type: Javadoc) {
 }
 
 task moveJavadoc(type: Exec) {
-	println 'hello im here'
 	commandLine '/home/tester/Tic-Tac-Toe/bin/host_javadocs'
 }
 
@@ -40,5 +39,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-test.finalizedBy(moveJavadoc)
+javadoc.finalizedBy(moveJavadoc)
 
