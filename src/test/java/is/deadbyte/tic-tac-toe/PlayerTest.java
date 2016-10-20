@@ -22,6 +22,6 @@ public class PlayerTest {
 		Player player = new Player();
 		player.giveName("Gulli");
 		
-		assertEqual("Gulli", player.getName());
+		assertEquals("Gulli", player.getName());
 	}
 }

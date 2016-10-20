@@ -14,7 +14,16 @@ public class Player {
 		return hasTurn;
 	}
 	
+	public void giveName(String n) {
+		name = n;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
 	public void move() {
 		hasTurn = false;
 	}
+	
 }
