@@ -14,6 +14,6 @@ public class PlayerTest {
 		Player player1 = new Player();
 		player1.move();
 		
-		assertTrue("hasTurn should return 'false'", player1.hasTurn());
+		assertFalse("hasTurn should return 'false'", player1.hasTurn());
 	}
 }

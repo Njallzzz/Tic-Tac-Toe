@@ -2,11 +2,19 @@
 
 public class Player {
     
-	private String name;
-	private char symbol;
-	private boolean hasTurn;
+	private static String name;
+	private static char symbol;
+	private static boolean hasTurn;
 	
 	public boolean somePlayerMethod() {
         return true;
     }
+	
+	public boolean hasTurn() {
+		return hasTurn;
+	}
+	
+	public void move() {
+		hasTurn = false;
+	}
 }
