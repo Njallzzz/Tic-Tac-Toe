@@ -1,5 +1,8 @@
 .gradle
 .DS_Store
+#build dir
+build
+
 #binaries
 .bin
 
