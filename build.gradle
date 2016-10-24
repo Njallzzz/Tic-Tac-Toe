@@ -24,6 +24,10 @@ task moveJar(type: Exec, dependsOn: jar) {
         commandLine '/home/tester/Tic-Tac-Toe/bin/host_jar'
 }
 
+task generateProjectWebsite(type: Exec) {
+	commandLine '/home/tester/Tic-Tac-Toe/bin/generate_index.py'
+}
+
 task deploy(type: Task) {
         // empty, look below at EOF
 }
@@ -47,4 +51,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-deploy.dependsOn moveJar, moveJavadoc
+deploy.dependsOn moveJar, moveJavadoc, generateProjectWebsite
