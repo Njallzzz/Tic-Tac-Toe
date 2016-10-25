@@ -9,7 +9,16 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
+
+jacocoTestReport{
+	reports {
+		xml.enabled = true
+		html.enabled = true
+	}	
+	
+}
 
 // creating javadocs
 task createJavadoc(type: Javadoc) {
@@ -53,4 +62,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+check.dependsOn jacocoTestReport
 deploy.dependsOn moveJar, moveJavadoc, generateProjectWebsite
