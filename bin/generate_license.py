@@ -10,7 +10,7 @@ with open('{project}/bin/ref_license.html'.format(project=projectdir), encoding=
 with open('{project}/LICENSE.md'.format(project=projectdir), encoding='UTF-8') as rd:
 	readme = rd.read();
 
-ipage = page.format(LICENSE=readme)
+page = page.format(LICENSE=readme)
 
 with open('{web}/license.html'.format(web=webpath), 'w', encoding='UTF-8') as output:
 	output.write(page)
