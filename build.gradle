@@ -26,6 +26,8 @@ task moveJar(type: Exec, dependsOn: jar) {
 
 task generateProjectWebsite(type: Exec) {
 	commandLine '/home/tester/Tic-Tac-Toe/bin/generate_index.py'
+	commandLine '/home/tester/Tic-Tac-Toe/bin/generate_license.py'
+	commandLine '/home/tester/Tic-Tac-Toe/bin/generate_codingstyle.py'
 }
 
 task deploy(type: Task) {

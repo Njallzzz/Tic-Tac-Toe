@@ -1,8 +1,8 @@
 The MIT License
 
-Copyright (c) 2010-2016 Baldur Már Pétursson, Ívar Markússon, Lúğvík Kemp Guğmundsson,
-						Njáll Hilmar Hilmarsson, Örlygur Ólafsson, Jón Helgi Kjartansson
-						John Russell Hutton, Daníel Freyr Sigurğsson
+Copyright (c) 2010-2016 Baldur MÃ¡r PÃ©tursson, Ãvar MarkÃºsson, LÃºÃ°vÃ­k Kemp GuÃ°mundsson,
+						NjÃ¡ll Hilmar Hilmarsson, Ã–rlygur Ã“lafsson, JÃ³n Helgi Kjartansson
+						John Russell Hutton, DanÃ­el Freyr SigurÃ°sson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
