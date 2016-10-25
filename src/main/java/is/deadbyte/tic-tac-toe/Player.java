@@ -5,6 +5,9 @@ public class Player {
 	private static String name;
 	private static char symbol;
 	private static boolean hasTurn;
+
+	Player() {
+	}
 	
 	public boolean somePlayerMethod() {
         return true;
@@ -14,7 +17,7 @@ public class Player {
 		return hasTurn;
 	}
 	
-	public void giveName(String n) {
+	public void setName(String n) {
 		name = n;
 	}
 	
