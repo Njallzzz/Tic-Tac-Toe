@@ -1,0 +1,29 @@
+language: java
+sudo: false # faster builds
+jdk:
+  - oraclejdk8
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - njall13@ru.is
+      - baldurp12@ru.is
+      - ivarmar15@ru.is
+      - john12@ru.is
+      - orlygur12@ru.is
+      - daniel08@ru.is
+      - ludvik11@ru.is
+      - jonk10@ru.is
+    on_success: change
+    on_failure: always
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
