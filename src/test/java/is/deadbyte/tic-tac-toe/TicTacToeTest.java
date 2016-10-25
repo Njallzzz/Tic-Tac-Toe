@@ -31,8 +31,25 @@ public class TicTacToeTest {
     @Test
     public void isValidTest(){
 
-    	TicTacToe ticTest  =new TicTacToe();
+    	TicTacToe ticTest  = new TicTacToe();
 
-    	assertTrue(ticTest.isValid());
+    	assertTrue(ticTest.isValid(0,0));
     }
+
+    @Test
+    public void nextTurnTest(){
+
+    	TicTacToe ticTest  = new TicTacToe();
+
+
+    	assertEquals("'X' was placed successfully at 0,1", ticTest.nextTurn(2));
+    }
+
+    // @Test
+    // public void isNotValidTest(){
+
+    // 	TicTacToe ticTest  =new TicTacToe();
+    // 	ticTest.board[1][1] = 'X';
+    // 	assertTrue(ticTest.isValid(1,1));
+    // }
 }

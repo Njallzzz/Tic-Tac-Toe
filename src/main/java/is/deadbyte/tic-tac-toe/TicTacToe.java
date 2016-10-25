@@ -3,7 +3,6 @@
 public class TicTacToe implements Game{
 
 	private char[][] board;
-	public void nextTurn(int tablePos){};
 
 	public TicTacToe(){
 		initializeGame();
@@ -23,7 +22,15 @@ public class TicTacToe implements Game{
 		}
 	}
 
-	public boolean isValid(){
-		return false;
+	/*
+	* 
+	*/
+	public boolean isValid(int row, int col){
+		return(board[row][col] != 'X' || board[row][col] != 'O');
+	}
+
+	public String nextTurn(int tablePos){
+
+		return "";
 	}
 }
