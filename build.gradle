@@ -16,8 +16,22 @@ task createJavadoc(type: Javadoc) {
   source = sourceSets.main.allJava
 }
 
-task moveJavadoc(type: Exec) {
+task moveJavadoc(type: Exec, dependsOn: javadoc) {
 	commandLine '/home/tester/Tic-Tac-Toe/bin/host_javadocs'
+}
+
+task moveJar(type: Exec, dependsOn: jar) {
+        commandLine '/home/tester/Tic-Tac-Toe/bin/host_jar'
+}
+
+task generateProjectWebsite(type: Exec) {
+	commandLine '/home/tester/Tic-Tac-Toe/bin/generate_index.py'
+	commandLine '/home/tester/Tic-Tac-Toe/bin/generate_license.py'
+	commandLine '/home/tester/Tic-Tac-Toe/bin/generate_codingstyle.py'
+}
+
+task deploy(type: Task) {
+        // empty, look below at EOF
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -39,5 +53,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-javadoc.finalizedBy(moveJavadoc)
-
+deploy.dependsOn moveJar, moveJavadoc, generateProjectWebsite

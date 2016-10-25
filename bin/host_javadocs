@@ -2,4 +2,5 @@
 
 cd /home/tester/Tic-Tac-Toe
 
-cp -R /home/tester/Tic-Tac-Toe/build/docs/javadoc/* /results
+rm -rf /www/javadocs/*
+cp -R /home/tester/Tic-Tac-Toe/build/docs/javadoc/* /www/javadocs
