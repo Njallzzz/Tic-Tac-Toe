@@ -5,6 +5,10 @@ public class TicTacToe implements Game{
 	private char[][] board;
 	public void nextTurn(int tablePos){};
 
+	public TicTacToe(){
+		initializeGame();
+	}
+
 	public char[][] getBoard(){
 		return board;
 	}
