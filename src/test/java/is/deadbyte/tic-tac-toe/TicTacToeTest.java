@@ -27,4 +27,12 @@ public class TicTacToeTest {
 
     	assertArrayEquals(boardTest, ticTest.getBoard());
     }
+
+    @Test
+    public void isValidTest(){
+
+    	TicTacToe ticTest  =new TicTacToe();
+
+    	assertTrue(ticTest.isValid());
+    }
 }

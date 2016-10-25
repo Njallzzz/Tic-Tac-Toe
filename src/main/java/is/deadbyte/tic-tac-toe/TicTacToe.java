@@ -21,5 +21,9 @@ public class TicTacToe implements Game{
 				board[i][j] = (char)((i * 3) + j + 1);
 			}
 		}
-	}	
+	}
+
+	public boolean isValid(){
+		return false;
+	}
 }
