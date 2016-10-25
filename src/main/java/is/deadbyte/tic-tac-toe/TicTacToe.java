@@ -2,6 +2,20 @@
 
 public class TicTacToe implements Game{
 
-  public void initializeGame(){};
-  public void nextTurn(int tablePos){};
+	private char[][] board;
+	public void nextTurn(int tablePos){};
+
+	public char[][] getBoard(){
+		return board;
+	}
+
+	public void initializeGame(){
+
+		board = new char[3][3];
+		for(int i = 0; i < 3; i++){
+			for (int j = 0; j < 3; j++){
+				board[i][j] = (char)((i * 3) + j + 1);
+			}
+		}
+	}	
 }
