@@ -1,11 +1,41 @@
 import ratpack.server.RatpackServer;
+import ratpack.jackson.Jackson;
+import org.json.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
+
 
 public class Main {
+	private static class Person {
+		private final String name;
+		public Person(@JsonProperty("name") String name) {
+			this.name = name;
+		}
+
+		public String getName() {
+			return name;
+		}
+	}
+
 	public static void main(String... args) throws Exception {
-		RatpackServer.start(server -> server
+		RatpackServer.start (server -> server
 			.handlers(chain -> chain
-			.get(ctx  -> ctx.render("Hello World!"))
-			.get(":name", ctx -> ctx.render("Hello " + ctx.getPathTokens().get("name") + "!"))
+				.get(ctx  -> {
+					Map<String, String> temp = new HashMap<String, String>();
+					temp.put("hello", "there");
+					temp.put("this", "is");
+		
+					 ctx.render(Jackson.json(temp));
+					})
+				.post( "person", ctx -> {
+					ctx.parse(Person.class).then(person -> ctx.render(person.getName()));
+					})
 			)
 		);
 	}
