@@ -75,6 +75,9 @@ public class TicTacToe implements Game{
 		return true;
 	}
 
+	public String checkWinner(){
+		return "no Winner!";
+	}
 
 
 }

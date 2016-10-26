@@ -92,4 +92,11 @@ public class TicTacToeTest {
 
         assertTrue(ticTest.checkBoardFull());
     }
+
+    @Test
+    public void checkWinnerPlayerX(){
+        TicTacToe ticTest  = new TicTacToe();
+        assertEquals("Danni", ticTest.checkWinner());
+
+    }
 }
