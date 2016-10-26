@@ -85,6 +85,11 @@ public class TicTacToeTest {
     @Test
     public void checkBoardFullTestWithFullBoard(){
         TicTacToe ticTest  = new TicTacToe();
+
+        for(int i = 1; i < 10; i++){
+            ticTest.nextTurn(i);
+        }
+
         assertTrue(ticTest.checkBoardFull());
     }
 }
