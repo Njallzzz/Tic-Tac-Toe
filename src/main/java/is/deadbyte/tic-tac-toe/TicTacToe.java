@@ -64,6 +64,10 @@ public class TicTacToe implements Game{
 		return "Illegal play, try again";
 	}
 
+	/**
+	* Method that checks if board is full
+	* @return returns false if board is not full, else true
+	*/
 	public boolean checkBoardFull(){
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j++){
@@ -76,6 +80,7 @@ public class TicTacToe implements Game{
 	}
 
 	public String checkWinner(){
+
 		return "no Winner!";
 	}
 

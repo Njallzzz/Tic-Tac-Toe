@@ -96,6 +96,10 @@ public class TicTacToeTest {
     @Test
     public void checkWinnerPlayerX(){
         TicTacToe ticTest  = new TicTacToe();
+        Player player = new Player();
+        Player player2 = new Player();
+        player.setName("Danni");
+        player2.setName("Zaki");
         assertEquals("Danni", ticTest.checkWinner());
 
     }
