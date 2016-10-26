@@ -75,4 +75,10 @@ public class TicTacToeTest {
         ticTest.nextTurn(5);
         assertEquals("Illegal play, try again", ticTest.nextTurn(5));
     }
+
+    @Test
+    public void checkBoardFullTest(){
+        TicTacToe ticTest  = new TicTacToe();
+        assertFalse(ticTest.checkBoardFull());
+    }
 }
