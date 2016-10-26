@@ -28,7 +28,7 @@ public class TicTacToe implements Game{
 	* 
 	*/
 	public boolean isValid(int row, int col){
-		return(board[row][col] != 'X' || board[row][col] != 'O');
+		return(board[row][col] != 'X' && board[row][col] != 'O');
 	}
 
 	public String nextTurn(int tablePos){
@@ -46,6 +46,6 @@ public class TicTacToe implements Game{
 			return "'O' was placed successfully at "+row+","+col;
 		}
 		
-		return "illegal play, try again";
+		return "Illegal play, try again";
 	}
 }

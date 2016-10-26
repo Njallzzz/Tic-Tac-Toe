@@ -32,10 +32,20 @@ public class TicTacToeTest {
     public void isValidTest(){
 
     	TicTacToe ticTest  = new TicTacToe();
-
     	assertTrue(ticTest.isValid(0,0));
     }
 
+    @Test
+    public void isNotValidTest(){
+
+        TicTacToe ticTest  =new TicTacToe();
+        ticTest.nextTurn(1);
+        assertFalse(ticTest.isValid(0,0));
+    }
+
+    /*
+    * Test inserting a legal, first move in row 0, column 1
+    */
     @Test
     public void nextTurnTest(){
 
@@ -44,11 +54,25 @@ public class TicTacToeTest {
     	assertEquals("'X' was placed successfully at 0,1", ticTest.nextTurn(2));
     }
 
-    // @Test
-    // public void isNotValidTest(){
+    /*
+    * Test inserting a legal, second move in row 1, column 1
+    */
+    @Test
+    public void nextTurnTestSecondMove(){
 
-    // 	TicTacToe ticTest  =new TicTacToe();
-    // 	ticTest.board[1][1] = 'X';
-    // 	assertTrue(ticTest.isValid(1,1));
-    // }
+        TicTacToe ticTest  = new TicTacToe();
+        ticTest.nextTurn(1);
+        assertEquals("'O' was placed successfully at 1,1", ticTest.nextTurn(5));
+    }
+
+    /*
+    * Test inserting illegal, second move in row 1, column 1
+    */
+    @Test
+    public void nextTurnTestIllegalMove(){
+
+        TicTacToe ticTest  = new TicTacToe();
+        ticTest.nextTurn(5);
+        assertEquals("Illegal play, try again", ticTest.nextTurn(5));
+    }
 }
