@@ -23,14 +23,17 @@ public class Main {
 		}
 	}
 
+	private static int num;
+
 	public static void main(String... args) throws Exception {
+	   num = 1337;
 		RatpackServer.start (server -> server
 			.handlers(chain -> chain
 				.get(ctx  -> {
 					Map<String, String> temp = new HashMap<String, String>();
 					temp.put("hello", "there");
-					temp.put("this", "is");
-		
+					temp.put("this", Integer.toString(num));
+					num++;		
 					 ctx.render(Jackson.json(temp));
 					})
 				.post( "person", ctx -> {
