@@ -1,4 +1,11 @@
-
+/**
+* <h1>Tic Tac Toe Class</h1>
+* A class that contains all basic functions for the game Tic Tac Toe
+* <p>
+* @param board contains all moves made by players
+* @param playerX,playerO has player name
+* @param playerXTurn stores who's turn it is
+*/
 
 public class TicTacToe implements Game{
 
@@ -24,13 +31,21 @@ public class TicTacToe implements Game{
 		}
 	}
 
-	/*
-	* 
+	/**
+	* A method that tells if a play is valid
+	* @return boolean true if a play is valid, else false
 	*/
 	public boolean isValid(int row, int col){
 		return(board[row][col] != 'X' && board[row][col] != 'O');
 	}
 
+	/**
+	* Method that uses if statement's to figure which player turn it is
+	* @param tablePos is the play position made by player
+	* @param row is an integer value for the corresponding row of a play made on board
+	* @param col is an integer value for the corresponding column of a play made on board
+	* @return String which tells where and what player just played or if an illegal play was made
+	*/
 	public String nextTurn(int tablePos){
 
 		int row = (tablePos -1) / 3;
