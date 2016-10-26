@@ -41,7 +41,6 @@ public class TicTacToeTest {
 
     	TicTacToe ticTest  = new TicTacToe();
 
-
     	assertEquals("'X' was placed successfully at 0,1", ticTest.nextTurn(2));
     }
 
