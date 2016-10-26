@@ -21,6 +21,10 @@ public class TicTacToe implements Game{
 		return board;
 	}
 
+	/**
+	* Method that creates an empty tic tac toe board
+	* inserts values 1 - 9 in corresponding squares
+	*/
 	public void initializeGame(){
 		playerXTurn = true;
 		board = new char[3][3];
