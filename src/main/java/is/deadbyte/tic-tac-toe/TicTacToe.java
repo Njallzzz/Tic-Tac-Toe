@@ -85,6 +85,27 @@ public class TicTacToe implements Game{
 
 	public String checkWinner(){
 
+		char turn = 'X';
+		if (playerXTurn == true){
+			turn = 'O';
+		}
+
+		for (int i = 0; i < 3; i++){
+			
+			int counthorizontal = 0;
+			
+			for (int j = 0; j < 3; j++){
+
+				if (board[i][j] == turn){
+					counthorizontal++;
+				}
+			}
+
+			if (counthorizontal == 3){
+				return String.valueOf(turn);
+			}
+		}
+
 		return "no Winner!";
 	}
 

@@ -94,13 +94,14 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void checkWinnerPlayerX(){
+    public void checkWinnerHorizontal(){
         TicTacToe ticTest  = new TicTacToe();
-        ticTest.nextTurn(1);
         ticTest.nextTurn(4);
-        ticTest.nextTurn(2);
+        ticTest.nextTurn(1);
         ticTest.nextTurn(5);
+        ticTest.nextTurn(2);
+        ticTest.nextTurn(9);
         ticTest.nextTurn(3);
-        assertEquals("X", ticTest.checkWinner());
+        assertEquals("O", ticTest.checkWinner());
     }
 }
