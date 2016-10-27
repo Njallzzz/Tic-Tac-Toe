@@ -77,6 +77,13 @@ public class TicTacToeTest {
     }
 
     @Test
+    public void nextTurnTestIllegalMoveOutOfScope(){
+
+        TicTacToe ticTest  = new TicTacToe();
+        assertEquals("Illegal play, try again", ticTest.nextTurn(-1));
+    }
+
+    @Test
     public void checkBoardFullTestWithEmptyBoard(){
         TicTacToe ticTest  = new TicTacToe();
         assertFalse(ticTest.checkBoardFull());
