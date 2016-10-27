@@ -40,7 +40,14 @@ public class TicTacToe implements Game{
 	* @return boolean true if a play is valid, else false
 	*/
 	public boolean isValid(int row, int col){
-		return((board[row][col] != 'X') && (board[row][col] != 'O') && ((row < 3 && row > 0) || (col < 3 && col > 0)));
+		if ((row < 3 && row >= 0) && (col < 3 && col >= 0)){
+
+			if ((board[row][col] != 'X') && (board[row][col] != 'O')){
+				return true;
+			}
+		}
+			
+		return false;
 	}
 
 	/**
