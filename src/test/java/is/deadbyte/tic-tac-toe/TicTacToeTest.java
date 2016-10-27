@@ -125,7 +125,6 @@ public class TicTacToeTest {
         ticTest.nextTurn(5);
         ticTest.nextTurn(3);
         ticTest.nextTurn(9);
-        ticTest.nextTurn(8);
         assertEquals("X", ticTest.checkWinner());
     }
 }
