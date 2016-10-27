@@ -116,4 +116,16 @@ public class TicTacToeTest {
         ticTest.nextTurn(8);
         assertEquals("O", ticTest.checkWinner());
     }
+
+    @Test
+    public void checkWinnerDiagonal(){
+        TicTacToe ticTest  = new TicTacToe();
+        ticTest.nextTurn(1);
+        ticTest.nextTurn(2);
+        ticTest.nextTurn(5);
+        ticTest.nextTurn(3);
+        ticTest.nextTurn(9);
+        ticTest.nextTurn(8);
+        assertEquals("X", ticTest.checkWinner());
+    }
 }
