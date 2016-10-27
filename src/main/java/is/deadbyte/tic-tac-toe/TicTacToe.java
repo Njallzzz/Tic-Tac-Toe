@@ -89,7 +89,7 @@ public class TicTacToe implements Game{
 		if (playerXTurn == true){
 			turn = 'O';
 		}
-
+		
 		for (int i = 0; i < 3; i++){
 			
 			int counthorizontal = 0;
@@ -110,6 +110,12 @@ public class TicTacToe implements Game{
 			}
 		}
 		
+		if((board[0][0] == board[1][1]) && board[1][1] == board[2][2]){
+			return String.valueOf(turn);
+		}
+		if((board[0][2] == board[1][1]) && board[1][1] == board[2][0]){
+			return String.valueOf(turn);
+		}
 		return "No Winner";
 	}
 
