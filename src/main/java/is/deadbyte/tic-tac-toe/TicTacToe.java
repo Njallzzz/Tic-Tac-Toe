@@ -93,20 +93,24 @@ public class TicTacToe implements Game{
 		for (int i = 0; i < 3; i++){
 			
 			int counthorizontal = 0;
-			
+			int countvertical = 0;
+
 			for (int j = 0; j < 3; j++){
 
 				if (board[i][j] == turn){
 					counthorizontal++;
 				}
+				if (board[j][i] == turn){
+					countvertical++;
+				}
 			}
 
-			if (counthorizontal == 3){
+			if ((counthorizontal == 3) || (countvertical == 3)){
 				return String.valueOf(turn);
 			}
 		}
-
-		return "no Winner!";
+		
+		return "No Winner";
 	}
 
 
