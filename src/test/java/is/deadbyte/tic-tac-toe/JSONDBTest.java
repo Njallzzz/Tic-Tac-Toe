@@ -33,5 +33,18 @@ public class JSONDBTest{
 
     }
 
+    @Test
+    public void testAddWin() throws IOException{
+      db = new JSONDB();
+
+      assertEquals(db.getStatsWins("Baldur"), 12);
+
+      db.addWin("Baldur");
+
+      assertEquals(db.getStatsWins("Baldur"), 13);
+
+
+    }
+
 
 }

@@ -51,14 +51,14 @@ public class JSONDB{
       }
     }
 
-    public void addLoss(String name){
+    public void addLoss(String name) throws IOException{
 
     }
 
     /**
     * Adds a new player to the database
     *
-    * @param name   name of the player to add 
+    * @param name   name of the player to add
     */
     public void addPlayer(String name) throws IOException{
       if(!isInDataBase(name)){
