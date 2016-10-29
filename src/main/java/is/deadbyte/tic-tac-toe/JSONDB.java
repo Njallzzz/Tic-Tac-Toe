@@ -58,7 +58,15 @@ public class JSONDB{
     public void addPlayer(String name) throws IOException{
       if(!isInDataBase(name)){
         JSONObject fileJson = getJSON();
-        fileJson.put(name, "[{\"Wins\":\"0\"},{\"Losses\": \"0\"}]");
+        JSONArray newUserArr = new JSONArray();
+        JSONObject emptyWins = new JSONObject();
+        emptyWins.put("Wins", "0");
+        JSONObject emptyLosses = new JSONObject();
+        emptyLosses.put("Losses", "0"); 
+        newUserArr.put(emptyWins);
+        newUserArr.put(emptyLosses);
+
+        fileJson.put(name, newUserArr);
         writer = new FileWriter(this.fileName);
         writer.write(String.valueOf(fileJson));
         writer.flush();
