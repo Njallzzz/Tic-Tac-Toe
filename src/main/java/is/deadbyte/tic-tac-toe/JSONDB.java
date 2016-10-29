@@ -1,4 +1,9 @@
-
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.json.JSONObject;
+import org.json.JSONArray;
 
 public class JSONDB{
     File fileName;
@@ -6,7 +11,7 @@ public class JSONDB{
     FileWriter writer;
 
     public JSONDB(){
-      fileName = "";
+      fileName = new File("test.json");
     }
 
     public void addWin(String name){
