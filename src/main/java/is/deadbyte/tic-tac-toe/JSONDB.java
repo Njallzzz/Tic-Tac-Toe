@@ -48,11 +48,11 @@ public class JSONDB{
     * Gets the win statistics of a player
     *
     * @param namd   Name of player
-    * @return int number of wins - NULL if not in database
+    * @return int number of wins - -1 if not in database
     */
     public int getStatsWins(String name) throws IOException{
       if(!isInDataBase(name)){
-        return null;
+        return -1;
       }
       // Read the file and cast to char then String
       reader = new FileReader(this.fileName);
@@ -60,9 +60,14 @@ public class JSONDB{
       reader.read(jsonchar);
       String jsonFile = new String(jsonchar);
 
+      // Build the JSON file
+      JSONObject fileJson = new JSONObject(jsonFile);
 
-
-      return 0;
+      // Get statistics and wins
+      JSONArray player = (JSONArray) fileJson.get(name);
+      JSONObject wins = (JSONObject)player.get(0);
+      
+      return Integer.parseInt((String)wins.get("Wins"));
     }
 
     public int getStatsLosses(String name){
@@ -70,6 +75,6 @@ public class JSONDB{
     }
 
     private boolean isInDataBase(String name){
-      return false;
+      return true;
     }
 }
