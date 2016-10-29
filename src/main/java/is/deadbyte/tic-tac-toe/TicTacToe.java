@@ -22,6 +22,14 @@ public class TicTacToe implements Game{
 		return board;
 	}
 
+	public Player getPlayerX{
+		return playerX;
+	}
+
+	public Player getPlayerO{
+		return playerO;
+	}
+
 	public void initializePlayers(String pX, String pO){
 		playerX = new Player(pX);
 		playerO = new Player(pO);
