@@ -64,5 +64,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+
 check.dependsOn jacocoTestReport
 deploy.dependsOn moveJar, moveJavadoc, generateProjectWebsite
