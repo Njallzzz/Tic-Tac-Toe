@@ -13,12 +13,19 @@ public class TicTacToe implements Game{
 	private Player playerX, playerO;
 	private boolean playerXTurn;
 
-	public TicTacToe(){
+	public TicTacToe(String pX, String pO){
 		initializeGame();
+		initializePlayers(pX, pO);
 	}
 
 	public char[][] getBoard(){
 		return board;
+	}
+
+	public void initializePlayers(String pX, String pO){
+		playerX = new Player(pX);
+		playerO = new Player(pO);
+
 	}
 
 	/**

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ConsoleUI{
 	
 	/*
@@ -5,7 +7,7 @@ public class ConsoleUI{
     * @param board contains moves made, and available moves in a two dimensional 
     * array, board[line][column]
     */
-    public void drawBoard(char[][] board){
+    public static void drawBoard(char[][] board){
         String output = "";
 
         for (int i = 0; i < 3; i++){
@@ -19,5 +21,25 @@ public class ConsoleUI{
     }
 
 	public static void main(String [] args){
+        
+        String nameX, nameO;
+
+        System.out.println("WELCOME TO A GAME OF TIC TAC TOE");
+        System.out.println("Enter the name of Player X:");
+        Scanner input = new Scanner(System.in);
+        nameX = input.next();
+        System.out.println("Enter the name of Player O:");
+        nameO = input.next();
+
+
+        TicTacToe ttt = new TicTacToe(nameX, nameO);
+        drawBoard(ttt.getBoard());
+
+
+        while(true){
+
+        }
+
+
 	}
 }
