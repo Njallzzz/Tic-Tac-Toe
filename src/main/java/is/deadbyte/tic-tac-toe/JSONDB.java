@@ -6,12 +6,13 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 
 public class JSONDB{
+    String folder = "db/";
     File fileName;
     FileReader reader;
     FileWriter writer;
 
     public JSONDB() throws IOException {
-      this.fileName = new File("test.json");
+      this.fileName = new File(folder + "dataBase.json");
       fileName.isFile();
       if(!fileName.isFile()){
         fileName.createNewFile();
@@ -43,12 +44,23 @@ public class JSONDB{
 
     }
 
+    /**
+    * Gets the win statistics of a player
+    *
+    * @param namd   Name of player
+    * @return int number of wins - NULL if not in database
+    */
     public int getStatsWins(String name) throws IOException{
+      if(!isInDataBase(name)){
+        return null;
+      }
       // Read the file and cast to char then String
-        reader = new FileReader(this.fileName);
-        char[] jsonchar = new char[2048];
-        reader.read(jsonchar);
-        String jsonFile = new String(jsonchar);
+      reader = new FileReader(this.fileName);
+      char[] jsonchar = new char[2048];
+      reader.read(jsonchar);
+      String jsonFile = new String(jsonchar);
+
+
 
       return 0;
     }
