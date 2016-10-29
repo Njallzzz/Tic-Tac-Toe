@@ -55,6 +55,11 @@ public class JSONDB{
 
     }
 
+    /**
+    * Adds a new player to the database
+    *
+    * @param name   name of the player to add 
+    */
     public void addPlayer(String name) throws IOException{
       if(!isInDataBase(name)){
         JSONObject fileJson = getJSON();
@@ -62,7 +67,7 @@ public class JSONDB{
         JSONObject emptyWins = new JSONObject();
         emptyWins.put("Wins", "0");
         JSONObject emptyLosses = new JSONObject();
-        emptyLosses.put("Losses", "0"); 
+        emptyLosses.put("Losses", "0");
         newUserArr.put(emptyWins);
         newUserArr.put(emptyLosses);
 
