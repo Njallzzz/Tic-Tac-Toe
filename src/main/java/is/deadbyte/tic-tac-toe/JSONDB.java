@@ -46,8 +46,30 @@ public class JSONDB{
     }
 
     public void addWin(String name) throws IOException{
-      if(!isInDataBase(name)){
+      if(isInDataBase(name)){
+        // Build the JSON file
+        JSONObject fileJson = getJSON();
 
+        // Get statistics and wins
+        JSONArray statistics = (JSONArray) fileJson.get(name);
+        JSONObject wins = (JSONObject)statistics.get(0);
+        int numberOfWins = Integer.parseInt((String)wins.get("Wins"));
+
+        // Increments the wins for player
+        wins.put("Wins", String.valueOf(numberOfWins+1));
+
+        // Recomplie the JSON file
+        statistics.put(0, wins);
+        fileJson.put(name, statistics);
+
+        // Cast json to String
+        String writeString = new String(String.valueOf(fileJson));
+
+        // Write to file
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(writeString);
+        writer.flush();
+        writer.close();
       }
     }
 
