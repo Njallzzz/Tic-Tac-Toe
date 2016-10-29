@@ -66,7 +66,7 @@ public class JSONDB{
       // Get statistics and wins
       JSONArray player = (JSONArray) fileJson.get(name);
       JSONObject wins = (JSONObject)player.get(0);
-      
+
       return Integer.parseInt((String)wins.get("Wins"));
     }
 

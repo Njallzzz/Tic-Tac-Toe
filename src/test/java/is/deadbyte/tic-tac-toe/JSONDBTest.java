@@ -18,6 +18,11 @@ public class JSONDBTest{
       assertEquals(db.getStatsWins("Baldur"), 12);
     }
 
+    @Test
+    public void testStatsLosses() throws IOException{
+      db = new JSONDB();
+      assertEquals(db.getStatsLosses("Njallz"), 12);
+    }
 
 
 
