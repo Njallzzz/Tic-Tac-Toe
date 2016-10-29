@@ -25,7 +25,7 @@ public class JSONDBTest{
     }
 
     @Test
-    public void addPlayer(){
+    public void addPlayer() throws IOException{
       db = new JSONDB();
 
       db.addPlayer("Lúðvík");
