@@ -21,15 +21,15 @@ public class JSONDB{
 
     }
 
-    public void getStatsWins(String name){
+    public int getStatsWins(String name){
 
     }
 
-    public void getStatsLosses(String name){
+    public int getStatsLosses(String name){
 
     }
 
-    private boolean isInDataBase(String name{
+    private boolean isInDataBase(String name){
       return false;
     }
 }

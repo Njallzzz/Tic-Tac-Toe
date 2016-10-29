@@ -6,12 +6,9 @@ import static org.junit.Assert.*;
 public class JSONTest{
 
     @Test
-    public test addWin(){
-      JSONObject compareObject = {"Baldur":[{"Wins":"12"},{"Losses":"0"}]};
-        
-
+    public void testStatsWins(){
+      assertEquale(getStatsWins("Baldur"), 12);
     }
-
 
 
 
