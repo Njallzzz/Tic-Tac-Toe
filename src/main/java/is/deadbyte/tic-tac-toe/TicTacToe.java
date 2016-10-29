@@ -13,12 +13,27 @@ public class TicTacToe implements Game{
 	private Player playerX, playerO;
 	private boolean playerXTurn;
 
-	public TicTacToe(){
+	public TicTacToe(String pX, String pO){
 		initializeGame();
+		initializePlayers(pX, pO);
 	}
 
 	public char[][] getBoard(){
 		return board;
+	}
+
+	public Player getPlayerX(){
+		return playerX;
+	}
+
+	public Player getPlayerO(){
+		return playerO;
+	}
+
+	public void initializePlayers(String pX, String pO){
+		playerX = new Player(pX);
+		playerO = new Player(pO);
+
 	}
 
 	/**
@@ -30,7 +45,7 @@ public class TicTacToe implements Game{
 		board = new char[3][3];
 		for(int i = 0; i < 3; i++){
 			for (int j = 0; j < 3; j++){
-				board[i][j] = (char)(48 + ((i * 3) + j + 1));
+				board[i][j] = (char)((i * 3) + j + 49);
 			}
 		}
 	}

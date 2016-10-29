@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Player {
 
-	private static String name;
+	private String name;
 
   /**
   * Constructor for Player class
