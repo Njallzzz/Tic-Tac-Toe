@@ -11,9 +11,8 @@ import java.io.IOException;
 public class JSONDBTest{
 
     @Test
-    public void testStatsWins(){
+    public void testStatsWins() throws IOException{
       JSONDB db = new JSONDB();
-
       assertEquals(db.getStatsWins("Baldur"), 12);
     }
 

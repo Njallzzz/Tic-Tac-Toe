@@ -10,8 +10,25 @@ public class JSONDB{
     FileReader reader;
     FileWriter writer;
 
-    public JSONDB(){
-      fileName = new File("test.json");
+    public JSONDB() throws IOException {
+      this.fileName = new File("test.json");
+      fileName.isFile();
+      if(!fileName.isFile()){
+        fileName.createNewFile();
+        initFile();
+      }
+    }
+
+    /**
+    * Creates an "empty" JSON file
+    *
+    * @throws IOException
+    */
+    public void initFile() throws IOException{
+        writer = new FileWriter(fileName);
+        writer.write("{}");
+        writer.flush();
+        writer.close();
     }
 
     public void addWin(String name){
@@ -26,7 +43,13 @@ public class JSONDB{
 
     }
 
-    public int getStatsWins(String name){
+    public int getStatsWins(String name) throws IOException{
+      // Read the file and cast to char then String
+        reader = new FileReader(this.fileName);
+        char[] jsonchar = new char[2048];
+        reader.read(jsonchar);
+        String jsonFile = new String(jsonchar);
+
       return 0;
     }
 
