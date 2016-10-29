@@ -8,11 +8,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class JSONTest{
+public class JSONDBTest{
 
     @Test
     public void testStatsWins(){
-      assertEquale(getStatsWins("Baldur"), 12);
+      JSONDB db = new JSONDB();
+
+      assertEquals(db.getStatsWins("Baldur"), 12);
     }
 
 

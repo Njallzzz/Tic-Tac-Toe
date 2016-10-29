@@ -27,11 +27,11 @@ public class JSONDB{
     }
 
     public int getStatsWins(String name){
-
+      return 0;
     }
 
     public int getStatsLosses(String name){
-
+      return 0;
     }
 
     private boolean isInDataBase(String name){
