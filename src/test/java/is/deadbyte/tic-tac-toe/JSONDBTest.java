@@ -21,7 +21,7 @@ public class JSONDBTest{
     @Test
     public void testStatsLosses() throws IOException{
       db = new JSONDB();
-      assertEquals(db.getStatsLosses("Njallz"), 12);
+      assertEquals(db.getStatsLosses("Njáll"), 12);
     }
 
 

@@ -70,8 +70,30 @@ public class JSONDB{
       return Integer.parseInt((String)wins.get("Wins"));
     }
 
-    public int getStatsLosses(String name){
-      return 0;
+    /**
+    * Gets the loss statistics of a player
+    *
+    * @param namd   Name of player
+    * @return int number of wins - -1 if not in database
+    */
+    public int getStatsLosses(String name) throws IOException{
+      if(!isInDataBase(name)){
+        return -1;
+      }
+      // Read the file and cast to char then String
+      reader = new FileReader(this.fileName);
+      char[] jsonchar = new char[2048];
+      reader.read(jsonchar);
+      String jsonFile = new String(jsonchar);
+
+      // Build the JSON file
+      JSONObject fileJson = new JSONObject(jsonFile);
+
+      // Get statistics and wins
+      JSONArray player = (JSONArray) fileJson.get(name);
+      JSONObject wins = (JSONObject)player.get(1);
+
+      return Integer.parseInt((String)wins.get("Losses"));
     }
 
     private boolean isInDataBase(String name){
