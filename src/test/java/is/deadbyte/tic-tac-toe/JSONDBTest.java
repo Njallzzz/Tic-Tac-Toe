@@ -24,6 +24,14 @@ public class JSONDBTest{
       assertEquals(db.getStatsLosses("Njáll"), 12);
     }
 
+    @Test
+    public void addPlayer(){
+      db = new JSONDB();
+
+      db.addPlayer("Lúðvík");
+      assertEquals(db.getStatsWins("Lúðvík"), 0);
+
+    }
 
 
 }
