@@ -6,6 +6,10 @@ jdk:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
+script:
+  - ./gradlew check
+  - ./gradlew codeCoverageReport
+
 notifications:
   email:
     recipients:
