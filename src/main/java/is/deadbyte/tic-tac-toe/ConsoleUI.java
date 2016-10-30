@@ -16,7 +16,7 @@ public class ConsoleUI{
 	
     /**
     * A method that draws the board to console
-    * @return board is the char board variable
+    * @para board is the char board variable
     */
     public static void drawBoard(char[][] board){
          String output = "";
@@ -46,7 +46,8 @@ public class ConsoleUI{
 
     /**
     * A method that checks if a string is a number (numeric)
-    * @return str is the string that we check
+    * @para str is the string that we check
+    * @return either true/false
     */
      public static boolean isNumeric(String str){
         try{
