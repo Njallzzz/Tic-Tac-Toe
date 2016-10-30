@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /home/tester/Tic-Tac-Toe
+
+rm /www/Tic-Tac-Toe.jar
+cp /home/tester/Tic-Tac-Toe/build/libs/Tic-Tac-Toe.jar /www/Tic-Tac-Toe.jar
