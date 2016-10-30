@@ -18,13 +18,10 @@ public class ConsoleUI{
 	
     /**
     * A method that draws the board to console
-<<<<<<< HEAD
     *
     * @param board contains all moves made by users
     * @param output contains text to represent the Tic Tac Toe board
-=======
     * @param board is the char board variable
->>>>>>> 77e377268114bc065d96c1b2e69a65ce0fed104d
     */
     public static void drawBoard(char[][] board){
          String output = "";
@@ -53,13 +50,10 @@ public class ConsoleUI{
 
     /**
     * A method that checks if a string is a number (numeric)
-<<<<<<< HEAD
     *
     * @param str is the string that we check
     * @exception NumberFormatException on input error
-=======
     * @param str is the string that we check
->>>>>>> 77e377268114bc065d96c1b2e69a65ce0fed104d
     * @return true if string is numeric / else false
     */
      public static boolean isNumeric(String str){
