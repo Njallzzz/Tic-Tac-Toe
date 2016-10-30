@@ -1,63 +1,25 @@
-				import ratpack.server.RatpackServer;
-				import ratpack.jackson.Jackson;
-				import ratpack.http.MutableHeaders;
-				import org.json.*;
+import ratpack.server.RatpackServer;
+import ratpack.jackson.Jackson;
+import ratpack.http.MutableHeaders;
+import org.json.*;
 
-				import com.fasterxml.jackson.annotation.JsonProperty;
 
-				import java.util.ArrayList;
-				import java.util.LinkedList;
-				import java.util.List;
-				import java.util.HashMap;
-				import java.util.Map;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.HashMap;
+import java.io.IOException;
 
-				public class GameService {
-
-					private static class GameAction {
-						private int game;
-						private int action;
-						public GameAction(@JsonProperty("game") int game, @JsonProperty("action") int action) {
-							this.game = game;
-							this.action = action;
-						}
-						public int getGame() {
-							return this.game;
-						}
-						public int getAction() {
-							return this.action;
-						}
-					}
-
-					private static class NewGame {
-						private String player1;
-						private String player2;
-						public NewGame(@JsonProperty("player1") String p1, @JsonProperty("player2") String p2) {
-			this.player1 = p1;
-			this.player2 = p2;
-		}
-		public String getPlayer1() {
-			return this.player1;
-		}
-		public String getPlayer2() {
-			return this.player2;
-		}
-	}
-
-	private static class GetBoard {
-		private int id;
-		public GetBoard(@JsonProperty("game") int game) {
-			this.id = game;
-		}
-		public int getId() {
-			return this.id;
-		}
-	}
-
+public class GameService {
 	private static HashMap<Integer, Game> g;
+	private static JSONDB db;
 
 	public static void main(String... args) throws Exception {
 	   g = new HashMap<Integer, Game>();
-
+		try {
+			db = new JSONDB();
+		} catch (IOException e) {
+			return;
+		}
 		RatpackServer.start (server -> server
 			.handlers(chain -> chain
 				.get("board/:game", ctx  -> {
@@ -97,7 +59,21 @@
 					} else {
 						TicTacToe game = (TicTacToe)g.get(gameid);
 						if(game.checkBoardFull() || !game.checkWinner().equals("No Winner")) {
-							if(action == 1){
+							if(!game.checkWinner().equals("No Winner")) {
+								String winner, loser;
+								if(game.checkWinner().equals("X")) {
+									winner = game.getPlayerX().getName();
+									loser = game.getPlayerO().getName();
+								} else {
+									winner = game.getPlayerO().getName();
+									loser = game.getPlayerX().getName();
+								}
+								db.addPlayer(winner);
+								db.addPlayer(loser);
+								db.addWin(winner);
+								db.addLoss(loser);
+							}
+							if(action == 1){	
 								game.initializeGame();
 							} else {
 								g.remove(gameid);
@@ -107,15 +83,15 @@
 						}
 										
 						String result = game.nextTurn(action);
-						if(game.checkBoardFull()) {
-							ctx.render("Draw!");
-						} else if(!game.checkWinner().equals("No Winner")) {
+						if(!game.checkWinner().equals("No Winner")) {
 							if(game.checkWinner().equals("X")) {
 								ctx.render(game.getPlayerX().getName() + " has won!");
 							} else {
 								ctx.render(game.getPlayerO().getName() + " has won!");
 							}
-						} else {
+						} else if(game.checkBoardFull()) {
+							ctx.render("Draw!");
+						}  else {
 							ctx.render(result);
 						}
 					}
