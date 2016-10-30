@@ -1,1 +1,1 @@
-web: RATPACK_PORT=80 ./gradlew run
+web: RATPACK_PORT=$PORT ./gradlew run
