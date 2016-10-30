@@ -8,9 +8,9 @@
  */
 
 // Apply the java plugin to add support for Java
+
 apply plugin: 'java'
 apply plugin: 'jacoco'
-
 
 jacocoTestReport{
 	reports {
@@ -49,6 +49,7 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
+
 
 // In this section you declare the dependencies for your production and test code
 dependencies {

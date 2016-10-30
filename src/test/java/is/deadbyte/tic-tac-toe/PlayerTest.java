@@ -7,6 +7,8 @@ public class PlayerTest {
 	public void testPlayer() {
         Player player = new Player("Baldur");
 
+		player.setName("Baldur");
+
         assertEquals(player.getName(), "Baldur");
     }
 
