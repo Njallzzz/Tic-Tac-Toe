@@ -18,6 +18,10 @@ public class TicTacToe implements Game{
 		initializePlayers(pX, pO);
 	}
 
+	public boolean getPlayerXTurn(){
+		return playerXTurn;
+	}
+
 	public char[][] getBoard(){
 		return board;
 	}
@@ -139,6 +143,4 @@ public class TicTacToe implements Game{
 		}
 		return "No Winner";
 	}
-
-
 }

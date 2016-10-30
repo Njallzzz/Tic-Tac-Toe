@@ -43,7 +43,7 @@ public class ConsoleUI{
 
         while(!ttt.checkWinner().equals("X") && !ttt.checkWinner().equals("O") && !ttt.checkBoardFull()){
 
-            if (ttt.playerXTurn){
+            if (ttt.getPlayerXTurn()){
                 System.out.println(nameX + " select a number between 1-9: ");
             }
             else{

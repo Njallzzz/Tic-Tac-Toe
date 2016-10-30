@@ -144,8 +144,8 @@ public class TicTacToeTest {
     }
 
     @Test
-    public boolean getplayerXTurnTest(){
+    public void getplayerXTurnTest(){
         TicTacToe ticTest  = new TicTacToe("","");
-        assertTrue(ticTest.getplayerXTurnTest());
+        assertTrue(ticTest.getPlayerXTurn());
     }
 }
