@@ -16,7 +16,7 @@ public class JSONDB{
     /**
     * Constructor for JSONDB
     *
-    * @throws IOException
+    * @throws IOException If unable to access datbase file
     */
     public JSONDB() throws IOException {
       this.fileName = new File(folder + "dataBase.json");
@@ -31,7 +31,7 @@ public class JSONDB{
     * Builds the JSON file from db file
     *
     * @return JSONObject
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     private JSONObject getJSON() throws IOException{
       // Read the file and cast to char then String
@@ -48,7 +48,7 @@ public class JSONDB{
     /**
     * Creates an "empty" JSON file
     *
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     private void initFile() throws IOException{
         writer = new FileWriter(fileName);
@@ -61,7 +61,7 @@ public class JSONDB{
     * Increments the win for the player witn @paramn name
     *
     * @param name   name of player
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     public void addWin(String name) throws IOException{
       if(isInDataBase(name)){
@@ -95,7 +95,7 @@ public class JSONDB{
     * Decrements the win for the player witn @paramn name
     *
     * @param name   name of player
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     public void addLoss(String name) throws IOException{
       if(isInDataBase(name)){
@@ -129,7 +129,7 @@ public class JSONDB{
     * Adds a new player to the database
     *
     * @param name   name of the player to add
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     public void addPlayer(String name) throws IOException{
       if(!isInDataBase(name)){
@@ -153,9 +153,9 @@ public class JSONDB{
     /**
     * Gets the win statistics of a player
     *
-    * @param namd   Name of player
+    * @param name   Name of player
     * @return int number of wins - -1 if not in database
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     public int getStatsWins(String name) throws IOException{
       if(!isInDataBase(name)){
@@ -173,9 +173,9 @@ public class JSONDB{
     /**
     * Gets the loss statistics of a player
     *
-    * @param namd   Name of player
+    * @param name   Name of player
     * @return int number of wins - -1 if not in database
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     public int getStatsLosses(String name) throws IOException{
       if(!isInDataBase(name)){
@@ -196,7 +196,7 @@ public class JSONDB{
     * the exception throws are used for checks.
     * @param name  name of player to check
     * @return boolean true if player is in database
-    * @throws IOException
+    * @throws IOException if unable to access database file
     */
     private boolean isInDataBase(String name) throws IOException{
       JSONObject fileJson = getJSON();
