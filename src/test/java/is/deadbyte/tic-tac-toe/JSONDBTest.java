@@ -53,6 +53,18 @@ public class JSONDBTest{
 
     }
 
+    @Test
+    public void testAddLoss() throws IOException{
+      db = new JSONDB();
+      resetTestBase();
+
+      db.addLoss("Tester");
+
+      assertEquals(db.getStatsLosses("Tester"), 9);
+    }
+
+
+
     public void resetTestBase() throws IOException{
       JSONObject fileJson = new JSONObject();
       JSONArray newUserArr = new JSONArray();
