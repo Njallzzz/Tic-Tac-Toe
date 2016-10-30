@@ -38,26 +38,38 @@ public class ConsoleUI{
         nameX = ttt.getPlayerX().getName();
         nameO = ttt.getPlayerO().getName();
 
-        while(!ttt.checkWinner().equals("X") && !ttt.checkWinner().equals("O") && !ttt.checkBoardFull()){
+        while(true){
 
-            if (ttt.playerXTurn){
-                System.out.println(nameX + " select a number between 1-9: ");
-            }
-            else{
-                System.out.println(nameO + " select a number between 1-9: ");
-            }
-
+            System.out.println(nameX + " select a number between 1-9: ");
             message = ttt.nextTurn(input.nextInt());
             System.out.println(message);
-            
+            checkWinner = ttt.checkWinner();
             drawBoard(ttt.getBoard());
+
+            if(checkWinner.equals("X") || checkWinner.equals("O") || ttt.checkBoardFull()){
+                break;
+            }
+
+            System.out.println(nameO + " select a number between 1-9: ");
+            message = ttt.nextTurn(input.nextInt());
+            System.out.println(message);
+            checkWinner = ttt.checkWinner();
+            drawBoard(ttt.getBoard());
+
+            if(checkWinner.equals("X") || checkWinner.equals("O") || ttt.checkBoardFull()){
+                break;
+            }
+
         }
 
-        if(ttt.checkWinner().equals("X"))
+        if(checkWinner.equals("X"))
             System.out.println(nameX);
-        else if(ttt.checkWinner().equals("O"))
+        else if(checkWinner.equals("O"))
             System.out.println(nameO);
         else
             System.out.println("DRAW!");
+
+
+
 	}
 }
