@@ -107,7 +107,11 @@ public class TicTacToe implements Game{
 		}
 		return true;
 	}
-
+	/**
+	* Method that checks who is the winner of the game
+	* @return return the string "No Winner" if there is a draw
+	* else returns x or o
+	*/
 	public String checkWinner(){
 
 		char turn = 'X';

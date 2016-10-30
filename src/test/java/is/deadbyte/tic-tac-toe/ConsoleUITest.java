@@ -2,7 +2,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.*;
 
-public class ConsoleUITest {
+public class ConsoleUITest{
 
 	@Test
 	public void drawBoardTest(){
