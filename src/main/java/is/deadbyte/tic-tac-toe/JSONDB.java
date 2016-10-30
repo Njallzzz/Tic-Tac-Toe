@@ -21,6 +21,11 @@ public class JSONDB{
       }
     }
 
+    /**
+    * Builds the JSON file from db file
+    *
+    * @return JSONObject
+    */
     private JSONObject getJSON() throws IOException{
       // Read the file and cast to char then String
       reader = new FileReader(this.fileName);
@@ -74,7 +79,31 @@ public class JSONDB{
     }
 
     public void addLoss(String name) throws IOException{
+      if(isInDataBase(name)){
+        // Build the JSON file
+        JSONObject fileJson = getJSON();
 
+        // Get statistics and wins
+        JSONArray statistics = (JSONArray) fileJson.get(name);
+        JSONObject losses = (JSONObject)statistics.get(1);
+        int numberOfLosses = Integer.parseInt((String)losses.get("Losses"));
+
+        // Increments the wins for player
+        losses.put("Losses", String.valueOf(numberOfLosses-1));
+
+        // Recomplie the JSON file
+        statistics.put(1, losses);
+        fileJson.put(name, statistics);
+
+        // Cast json to String
+        String writeString = new String(String.valueOf(fileJson));
+
+        // Write to file
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(writeString);
+        writer.flush();
+        writer.close();
+      }
     }
 
     /**
