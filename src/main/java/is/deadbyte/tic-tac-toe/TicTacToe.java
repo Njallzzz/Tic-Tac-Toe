@@ -110,7 +110,7 @@ public class TicTacToe implements Game{
 	/**
 	* Method that checks who is the winner of the game
 	* @return return the string "No Winner" if there is a draw
-	* else returns x or o
+	* else returns X or O
 	*/
 	public String checkWinner(){
 

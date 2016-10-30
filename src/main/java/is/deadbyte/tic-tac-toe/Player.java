@@ -1,3 +1,8 @@
+/**
+* <h1>Player class</h1>
+* A class to set and get player names
+*/
+
 import java.util.Scanner;
 
 public class Player {

@@ -1,3 +1,8 @@
+/**
+* <h1>JSONDB class</h1>
+* A database class that uses JSON to store player names, wins and losses
+*/
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
