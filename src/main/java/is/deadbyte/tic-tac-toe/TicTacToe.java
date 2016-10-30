@@ -22,11 +22,11 @@ public class TicTacToe implements Game{
 		return board;
 	}
 
-	public Player getPlayerX{
+	public Player getPlayerX(){
 		return playerX;
 	}
 
-	public Player getPlayerO{
+	public Player getPlayerO(){
 		return playerO;
 	}
 
