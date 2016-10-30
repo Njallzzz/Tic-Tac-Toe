@@ -7,8 +7,10 @@ public class Player {
   /**
   * Constructor for Player class
   *
+  * @param name  name of the player
   */
   public Player(String name) {
+		this.name = name;
   }
 
   /**
@@ -16,6 +18,7 @@ public class Player {
   * @param n  new name for Player
   */
 	public void setName(String n) {
+		name = n;
 	}
 
   /**
@@ -24,7 +27,7 @@ public class Player {
   * @return name of Player
   */
 	public String getName() {
-		return "";
+		return name;
 	}
 
 }
