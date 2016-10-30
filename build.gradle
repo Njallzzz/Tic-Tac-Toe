@@ -22,6 +22,15 @@ jacocoTestReport{
 	
 }
 
+task fatJar(type: Jar) {
+	manifest {
+		attributes 'Main-Class': 'GameService'
+	}
+	baseName = project.name + '-all'
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	with jar
+}
+
 // creating javadocs
 task createJavadoc(type: Javadoc) {
   source = sourceSets.main.allSource
@@ -31,7 +40,7 @@ task moveJavadoc(type: Exec, dependsOn: javadoc) {
 	commandLine '/home/tester/Tic-Tac-Toe/bin/host_javadocs'
 }
 
-task moveJar(type: Exec, dependsOn: jar) {
+task moveJar(type: Exec, dependsOn: fatJar) {
         commandLine '/home/tester/Tic-Tac-Toe/bin/host_jar'
 }
 
