@@ -8,6 +8,7 @@ public class TicTacToe implements Game{
 	private char[][] board;
 	private Player playerX, playerO;
 	private boolean playerXTurn;
+
 /**
 * Constructor for Tic Tac Toe Game
 * @param pX Player 1 name

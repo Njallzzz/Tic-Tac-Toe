@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="gui.css">
+<script src="jquery-3.1.1.min.js"></script>
+<script src="GUI.js"></script>
+<title>TicTacToe</title>
+</head>
+<body>
+<h1>Tic Tac Toe</h1>
+	<div class="container">
+		<div id="serverinput">
+		<p>If you wish to replace the URL for the game server you an do so here</p>
+		<input id="newserver"/><button id="serversubmit">Submit</button>
+		</div>
+		<p>Insert player names</p>
+		<input id="name1" value="Player 1"/>
+		<input id="name2" value="Player 2"/>
+		<button id="names">Confirm Names</button>
+		<div class="game">
+			<div class="row">
+				<div class="field" id="1"><p>+</p></div>
+				<div class="field" id="2"><p>+</p></div>
+				<div class="field" id="3"><p>+</p></div>
+			</div>
+			<div class="row">
+				<div class="field" id="4"><p>+</p></div>
+				<div class="field" id="5"><p>+</p></div>
+				<div class="field" id="6"><p>+</p></div>
+			</div>
+			<div class="row">
+				<div class="field" id="7"><p>+</p></div>
+				<div class="field" id="8"><p>+</p></div>
+				<div class="field" id="9"><p>+</p></div>
+			</div>
+		</div>
+		<div id="text_display">
+		<p id="error"></p>
+		<p id="message"></p>
+		<p id="again">Do you wish to play again?</br> <button id="yes">Yes</button><button id="no">No</button></p>
+		</div>
+	</div>
+	<div id="footer">
+	<p>	&copy; 2010-2016 Baldur Már Pétursson, Ívar Markússon, Lúðvík Kemp Guðmundsson, Njáll Hilmar Hilmarsson, Örlygur Ólafsson, Jón Helgi Kjartansson John Russell Hutton, Daníel Freyr Sigurðsson</p>
+	</div>
+</body>
+</html>
