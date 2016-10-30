@@ -11,6 +11,7 @@ public class TicTacToe implements Game{
 
 /**
 * Constructor for Tic Tac Toe Game
+* 
 * @param pX Player 1 name
 * @param pO Player 2 name
 */
@@ -56,6 +57,7 @@ public class TicTacToe implements Game{
 
 	/**
 	* A method that tells if a play is valid
+	*
 	* @param row number starting at 0 and ending at 2
 	* @param col number starting at 0 and ending at 2
 	* @return boolean true if a play is valid, else false
@@ -73,6 +75,7 @@ public class TicTacToe implements Game{
 
 	/**
 	* Method that uses if statement's to figure which player turn it is
+	*
 	* @param tablePos is the play position made by player
 	* @return String which tells where and what player just played or if an illegal play was made
 	*/
@@ -96,6 +99,7 @@ public class TicTacToe implements Game{
 
 	/**
 	* Method that checks if board is full
+	*
 	* @return returns false if board is not full, else true
 	*/
 	public boolean checkBoardFull(){
@@ -110,8 +114,8 @@ public class TicTacToe implements Game{
 	}
 	/**
 	* Method that checks who is the winner of the game
-	* @return return the string "No Winner" if there is a draw
-	* else returns X or O
+	*
+	* @return return the string "No Winner" if there is a draw else returns X or O
 	*/
 	public String checkWinner(){
 
