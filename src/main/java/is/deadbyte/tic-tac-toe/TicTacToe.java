@@ -11,7 +11,7 @@ public class TicTacToe implements Game{
 
 	private char[][] board;
 	private Player playerX, playerO;
-	private boolean playerXTurn;
+	public boolean playerXTurn;
 
 	public TicTacToe(String pX, String pO){
 		initializeGame();
