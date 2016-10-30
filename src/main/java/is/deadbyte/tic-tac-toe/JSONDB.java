@@ -12,6 +12,12 @@ public class JSONDB{
     FileReader reader;
     FileWriter writer;
 
+
+    /**
+    * Constructor for JSONDB
+    *
+    * @throws IOException
+    */
     public JSONDB() throws IOException {
       this.fileName = new File(folder + "dataBase.json");
       fileName.isFile();
@@ -25,6 +31,7 @@ public class JSONDB{
     * Builds the JSON file from db file
     *
     * @return JSONObject
+    * @throws IOException
     */
     private JSONObject getJSON() throws IOException{
       // Read the file and cast to char then String
@@ -50,6 +57,12 @@ public class JSONDB{
         writer.close();
     }
 
+    /**
+    * Increments the win for the player witn @paramn name
+    *
+    * @param name   name of player
+    * @throws IOException
+    */
     public void addWin(String name) throws IOException{
       if(isInDataBase(name)){
         // Build the JSON file
@@ -78,6 +91,12 @@ public class JSONDB{
       }
     }
 
+    /**
+    * Decrements the win for the player witn @paramn name
+    *
+    * @param name   name of player
+    * @throws IOException
+    */
     public void addLoss(String name) throws IOException{
       if(isInDataBase(name)){
         // Build the JSON file
@@ -110,6 +129,7 @@ public class JSONDB{
     * Adds a new player to the database
     *
     * @param name   name of the player to add
+    * @throws IOException
     */
     public void addPlayer(String name) throws IOException{
       if(!isInDataBase(name)){
@@ -135,6 +155,7 @@ public class JSONDB{
     *
     * @param namd   Name of player
     * @return int number of wins - -1 if not in database
+    * @throws IOException
     */
     public int getStatsWins(String name) throws IOException{
       if(!isInDataBase(name)){
@@ -154,6 +175,7 @@ public class JSONDB{
     *
     * @param namd   Name of player
     * @return int number of wins - -1 if not in database
+    * @throws IOException
     */
     public int getStatsLosses(String name) throws IOException{
       if(!isInDataBase(name)){
@@ -174,6 +196,7 @@ public class JSONDB{
     * the exception throws are used for checks.
     * @param name  name of player to check
     * @return boolean true if player is in database
+    * @throws IOException
     */
     private boolean isInDataBase(String name) throws IOException{
       JSONObject fileJson = getJSON();
