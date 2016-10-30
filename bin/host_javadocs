@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd /home/tester/Tic-Tac-Toe
-
-rm -rf /www/javadocs/*
-cp -R /home/tester/Tic-Tac-Toe/build/docs/javadoc/* /www/javadocs
