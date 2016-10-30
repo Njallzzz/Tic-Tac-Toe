@@ -27,4 +27,16 @@ public class ConsoleUITest {
 	 		
 	 	System.setOut(null);
     	}
+
+    @Test
+    public void isNumericTestFalse(){
+    	ConsoleUI cUI = new ConsoleUI();
+    	assertFalse(cUI.isNumeric("S"));
+    }
+
+    @Test
+    public void isNumericTestTrue(){
+    	ConsoleUI cUI = new ConsoleUI();
+    	assertTrue(cUI.isNumeric("5"));
+    }	
 }

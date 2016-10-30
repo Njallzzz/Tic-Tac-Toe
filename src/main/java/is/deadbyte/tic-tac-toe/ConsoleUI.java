@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class ConsoleUI{
+
+    private static String nameX, nameO, message;
 	
     public static void drawBoard(char[][] board){
          String output = "";
@@ -16,16 +18,32 @@ public class ConsoleUI{
         System.out.println(output);
     }
 
-    public static void main(String [] args){
-        
-        String nameX, nameO, message, checkWinner;
-
-        System.out.println("WELCOME TO A GAME OF TIC TAC TOE");
+     private static void getUserInputs(){
         System.out.println("Enter the name of Player X:");
         Scanner input = new Scanner(System.in);
         nameX = input.next();
         System.out.println("Enter the name of Player O:");
         nameO = input.next();
+    }
+
+     public static boolean isNumeric(String str){
+        try{
+          int d = Integer.parseInt(str);
+        }
+        catch(NumberFormatException nfe){
+          return false;
+        }
+        return true;
+    }
+
+
+    public static void main(String [] args){
+        String playerMove;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("WELCOME TO A GAME OF TIC TAC TOE");
+        getUserInputs();
+        
 
         TicTacToe ttt = new TicTacToe(nameX, nameO);
         nameX = ttt.getPlayerX().getName();
@@ -44,12 +62,14 @@ public class ConsoleUI{
             else{
                 System.out.println(nameO + " select a number between 1-9: ");
             }
-
-            message = ttt.nextTurn(input.nextInt());
-            System.out.println(message);
+            playerMove = input.next();
+            if(isNumeric(playerMove)){
+                message = ttt.nextTurn(Integer.parseInt(playerMove));
+                System.out.println(message);
+                System.out.println();
+                drawBoard(ttt.getBoard());
+            }
             
-            System.out.println();
-            drawBoard(ttt.getBoard());
         }
 
         if(ttt.checkWinner().equals("X"))
