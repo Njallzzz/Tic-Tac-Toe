@@ -64,5 +64,36 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+sourceSets {
+    selenium
+}
+
+dependencies {
+    // Application dependencies
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'net.joningi:icndb-java-api:1.0'
+    compile 'com.sparkjava:spark-core:2.5'
+
+    // Unit test dependencies
+    testCompile 'junit:junit:4.11'
+
+    // Selenium dependencies
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
+}
+
+task stage {
+    dependsOn installDist
+}
+
+task selenium(type: Test, dependsOn: installDist {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+}
+
+
+
+
 check.dependsOn jacocoTestReport
 deploy.dependsOn moveJar, moveJavadoc, generateProjectWebsite
