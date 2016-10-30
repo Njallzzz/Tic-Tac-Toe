@@ -40,7 +40,7 @@ task moveJavadoc(type: Exec, dependsOn: javadoc) {
 	commandLine '/home/tester/Tic-Tac-Toe/bin/host_javadocs'
 }
 
-task moveJar(type: Exec, dependsOn: jar) {
+task moveJar(type: Exec, dependsOn: fatJar) {
         commandLine '/home/tester/Tic-Tac-Toe/bin/host_jar'
 }
 
