@@ -19,7 +19,7 @@ public class ConsoleUI{
 	
     /**
     * A method that draws the board to console
-    * @para board is the char board variable
+    * @param board is the char board variable
     */
     public static void drawBoard(char[][] board){
          String output = "";
@@ -49,7 +49,7 @@ public class ConsoleUI{
 
     /**
     * A method that checks if a string is a number (numeric)
-    * @para str is the string that we check
+    * @param str is the string that we check
     * @return true if string is numeric / else false
     */
      public static boolean isNumeric(String str){
@@ -69,7 +69,7 @@ public class ConsoleUI{
             db = new JSONDB();
         } catch (IOException e) {
             System.out.println("Unable to access database");
-            return;
+           return;
         }
         String playerMove;
         Scanner input = new Scanner(System.in);
