@@ -1,11 +1,10 @@
 /**
 * <h1>ConsoleUi class</h1>
-* A class that is used to illuminate the game to console
+* A class that is used to illuminate the game Tic Tac Toe to console
 * <p>
 * @param nameX is the variable for player number one
 * @param nameO is the variable for player number two
-* @param message is variable that is used for entering which
-* square for your move
+* @param message is variable that is used for entering which square for your move
 */
 
 import java.util.Scanner;
@@ -19,6 +18,9 @@ public class ConsoleUI{
 	
     /**
     * A method that draws the board to console
+    *
+    * @param board contains all moves made by users
+    * @param output contains text to represent the Tic Tac Toe board
     * @param board is the char board variable
     */
     public static void drawBoard(char[][] board){
@@ -36,8 +38,7 @@ public class ConsoleUI{
     }
 
      /**
-    * A method that gets user inputs for the 
-    * two players and uses global variables
+    * A method that gets user inputs for the two players
     */
     private static void getUserInputs(){
         System.out.println("Enter the name of Player X:");
@@ -49,6 +50,9 @@ public class ConsoleUI{
 
     /**
     * A method that checks if a string is a number (numeric)
+    *
+    * @param str is the string that we check
+    * @exception NumberFormatException on input error
     * @param str is the string that we check
     * @return true if string is numeric / else false
     */
@@ -62,7 +66,14 @@ public class ConsoleUI{
         return true;
     }
 
-
+    /**
+    * The main method to run Tic Tac Toe in console. 
+    * It uses database JSON to store names with wins and losses.
+    *
+    * @param db is an object of JSONDB class
+    * @param ttt is an object of TicTacToe class
+    * @exception IOException when unable to access database
+    */
     public static void main(String [] args){
         JSONDB db;
         try{
