@@ -20,6 +20,7 @@ public class Player {
 
   /**
   * Setter for Player Class name
+  * 
   * @param n  new name for Player
   */
 	public void setName(String n) {
