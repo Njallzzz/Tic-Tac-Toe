@@ -61,6 +61,7 @@ public class ConsoleUI{
 
 
     public static void main(String [] args){
+        JSONDB db = new JSONDB();
         String playerMove;
         Scanner input = new Scanner(System.in);
 
