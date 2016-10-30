@@ -75,13 +75,9 @@ function Readplay(response){
 		$("#error").html("<p>You have to insert your names before you can play");
 		clearmessage();
 	}
+
 	if (response.indexOf("won") != -1){
-			if (response.indexOf("1") != -1){
-				haswon(player1);
-			}
-			else{
-				haswon(player2);
-			}
+				haswon(response);
 		}
 	if(response.indexOf("Draw") != -1){
 		clearerror();
