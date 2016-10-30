@@ -1,9 +1,23 @@
+/**
+* <h1>ConsoleUi class</h1>
+* A class that is used to illuminate the game to console
+* <p>
+* @param nameX is the variable for player number one
+* @param nameO is the variable for player number two
+* @param message is variable that is used for entering which
+* square for your move
+*/
+
 import java.util.Scanner;
 
 public class ConsoleUI{
 
     private static String nameX, nameO, message;
 	
+    /**
+    * A method that draws the board to console
+    * @return board is the char board variable
+    */
     public static void drawBoard(char[][] board){
          String output = "";
 
@@ -18,7 +32,11 @@ public class ConsoleUI{
         System.out.println(output);
     }
 
-     private static void getUserInputs(){
+     /**
+    * A method that gets user inputs for the 
+    * two players and uses global variables
+    */
+    private static void getUserInputs(){
         System.out.println("Enter the name of Player X:");
         Scanner input = new Scanner(System.in);
         nameX = input.next();
@@ -26,6 +44,10 @@ public class ConsoleUI{
         nameO = input.next();
     }
 
+    /**
+    * A method that checks if a string is a number (numeric)
+    * @return str is the string that we check
+    */
      public static boolean isNumeric(String str){
         try{
           int d = Integer.parseInt(str);
