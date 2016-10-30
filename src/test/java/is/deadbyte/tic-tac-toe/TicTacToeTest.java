@@ -142,4 +142,10 @@ public class TicTacToeTest {
         ticTest.nextTurn(2);
         assertEquals("No Winner", ticTest.checkWinner());
     }
+
+    @Test
+    public boolean getplayerXTurnTest(){
+        TicTacToe ticTest  = new TicTacToe("","");
+        assertTrue(ticTest.getplayerXTurnTest());
+    }
 }

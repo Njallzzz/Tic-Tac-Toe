@@ -12,14 +12,13 @@ public class ConsoleUI{
 
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                //output += String.valueOf(board[i][j]);
-                System.out.print(board[i][j]);
+                output += String.valueOf(board[i][j])+" ";
             }
-            System.out.println();
-            //output += "\n";
+
+            output += "\n";
         }
 
-        //System.out.println(output);
+        System.out.println(output);
     }
 
 	public static void main(String [] args){
@@ -34,9 +33,13 @@ public class ConsoleUI{
         nameO = input.next();
 
         TicTacToe ttt = new TicTacToe(nameX, nameO);
-        drawBoard(ttt.getBoard());
         nameX = ttt.getPlayerX().getName();
         nameO = ttt.getPlayerO().getName();
+
+        System.out.println();
+        System.out.println();
+
+        drawBoard(ttt.getBoard());
 
         while(!ttt.checkWinner().equals("X") && !ttt.checkWinner().equals("O") && !ttt.checkBoardFull()){
 
@@ -50,6 +53,7 @@ public class ConsoleUI{
             message = ttt.nextTurn(input.nextInt());
             System.out.println(message);
             
+            System.out.println();
             drawBoard(ttt.getBoard());
         }
 
