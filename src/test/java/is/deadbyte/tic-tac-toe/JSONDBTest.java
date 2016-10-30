@@ -60,7 +60,7 @@ public class JSONDBTest{
 
       db.addLoss("Tester");
 
-      assertEquals(db.getStatsLosses("Tester"), 9);
+      assertEquals(db.getStatsLosses("Tester"), 11);
     }
 
 
