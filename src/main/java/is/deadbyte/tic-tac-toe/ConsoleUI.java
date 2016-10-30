@@ -47,7 +47,7 @@ public class ConsoleUI{
     /**
     * A method that checks if a string is a number (numeric)
     * @para str is the string that we check
-    * @return either true/false
+    * @return true if string is numeric / else false
     */
      public static boolean isNumeric(String str){
         try{
