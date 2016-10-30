@@ -113,7 +113,7 @@ public class JSONDB{
         int numberOfLosses = Integer.parseInt((String)losses.get("Losses"));
 
         // Increments the wins for player
-        losses.put("Losses", String.valueOf(numberOfLosses-1));
+        losses.put("Losses", String.valueOf(numberOfLosses+1));
 
         // Recomplie the JSON file
         statistics.put(1, losses);

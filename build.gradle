@@ -7,7 +7,9 @@
  * user guide available at https://docs.gradle.org/3.1/userguide/tutorial_java_projects.html
  */
 
-// Apply the java plugin to add support for Java
+plugins {
+	id 'io.ratpack.ratpack-java' version '1.4.3'
+}
 
 apply plugin: 'java'
 apply plugin: 'jacoco'
@@ -22,7 +24,7 @@ jacocoTestReport{
 
 // creating javadocs
 task createJavadoc(type: Javadoc) {
-  source = sourceSets.main.allJava
+  source = sourceSets.main.allSource
 }
 
 task moveJavadoc(type: Exec, dependsOn: javadoc) {
@@ -57,12 +59,15 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     compile 'org.json:json:20160810'
     
+    runtime 'org.slf4j:slf4j-simple:1.7.21'
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
 }
+
+mainClassName = "GameService"
 
 check.dependsOn jacocoTestReport
 deploy.dependsOn moveJar, moveJavadoc, generateProjectWebsite
